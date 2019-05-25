@@ -6,12 +6,13 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  font-family: "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e8fffe;
+  background-color: #e2f8f7;
+  color: #8d79a5;
 }
 
 code {
@@ -19,33 +20,68 @@ code {
     monospace;
 }
 .app {
-  margin: auto;
   width: 50vw;
-  height: 30vh;
   position: absolute;
   top: 10vh;
   left: 25vw;
+  padding: 20px;
+  background-color: #fff;
 }
 header {
-  margin: 0 auto;
-  text-align: center;
-  background-color: rgba(83, 82, 82, 0.808);
+  background-color: #fff;
+  margin-bottom: 20px;  
 }
 
 .task {
-  margin: 0 auto;
-  text-align: center;
-  background-color: rgba(83, 82, 82, 0.808);
+  padding-top: 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.content{
+  flex-basis: 80%;
+}
+.remove {
+  flex-basis: 10%;
+  border: 1.5px solid #f09290;
+  border-radius: 5px;
+  color: #f09290;
+  font-weight: 500;
+  text-align: right;
+  padding: 7px;
 }
 
 .add-task {
-  margin: 0 auto;
+  background-color: #fff;
   display: flex;
-}
-
+  justify-content: space-between;
+} 
 .add-task input {
-  flex-basis: 80%;
+  flex-basis: 92%;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid rgb(199, 194, 194);
+  border-radius: 5px;
+  outline: none;
+  color: #8d79a5;
+}
+input:focus {
+  border: 1px solid rgb(121, 143, 238);
+  border-radius: 5px;
 }
 .add-task button {
-  flex-basis: 20%;
+  flex-basis: 5%;
+  padding: 7px;
+  border: 1.5px solid #83d4cb;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #83d4cb;
+  font-weight: 600;
+}
+h3 span {
+  text-align: right;
+}
+.completed {
+  text-decoration: line-through;
 }

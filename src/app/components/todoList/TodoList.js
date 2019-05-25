@@ -7,25 +7,8 @@ class TodoList extends React.Component {
     constructor() {
         super();
         this.state = {
-            tasks: [
-                {
-                    id: idGenerator(),
-                    content: "neki tekst",
-                    completed: false
-                },
-                {
-                    id: idGenerator(),
-                    content: "neki drugi tekst",
-                    completed: false
-                }
-                ,
-                {
-                    id: idGenerator(),
-                    content: "neki treci tekst",
-                    completed: false
-                }
-            ],
-            searchValue:""
+            tasks: [],
+            searchValue: ""
         }
     }
 
@@ -53,18 +36,29 @@ class TodoList extends React.Component {
         this.setState({ tasks: tasks });
     }
 
+    toggleCompleted = (id) => {
+        this.setState({
+            tasks: this.state.tasks.map((task) => {
+                if (task.id === id) {
+                    task.completed = !task.completed
+                }
+                return task;
+            })
+        })
+    }
+
 
 
 
     render() {
         const { tasks, searchValue } = this.state;
         const todos = tasks.map((task) => {
-            return <Task key={task.id} task={task} deleteTask={this.deleteTask} />
+            return <Task key={task.id} task={task} deleteTask={this.deleteTask} toggleCompleted={this.toggleCompleted} />
         });
 
         return (
             <>
-                <AddTask createNewTask={this.createNewTask} searchValue={searchValue} setSearchValue={this.setSearchValue}/>
+                <AddTask createNewTask={this.createNewTask} searchValue={searchValue} setSearchValue={this.setSearchValue} />
                 {todos}
             </>
         )

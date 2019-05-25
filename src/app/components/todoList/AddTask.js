@@ -15,8 +15,8 @@ class AddTask extends React.Component {
 
         return (
             <div className="add-task">
-                <input type="search" value={searchValue} onChange={setSearchValue} />
-                <button onClick={createNewTask}>AddTask</button>
+                <input type="search" value={searchValue} onChange={setSearchValue} placeholder="Add Todo"/>
+                <button onClick={createNewTask}>Add</button>
             </div>
         )
     }

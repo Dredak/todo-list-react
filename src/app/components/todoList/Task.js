@@ -6,12 +6,13 @@ class Task extends React.Component {
     }
 
     render() {
-        const { task, deleteTask } = this.props;
+        const { task, deleteTask, toggleCompleted } = this.props;
 
         return (
             <div className="task">
-                <h3>{task.content}</h3>
-                <span onClick={()=>deleteTask(task.id)}>X</span>
+                <input type="checkbox" onChange={() => toggleCompleted(task.id)} />
+                <p className={task.completed ? "content completed" : "content"}>{task.content}</p>
+                <p className="remove" onClick={() => deleteTask(task.id)}>Remove</p>
             </div>
         )
     }
