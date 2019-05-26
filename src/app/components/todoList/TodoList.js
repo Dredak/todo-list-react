@@ -1,7 +1,7 @@
 import React from "react";
 import Task from "./Task";
 import idGenerator from "react-id-generator";
-import AddTask from "./AddTask";
+import NewTask from "./NewTask";
 
 class TodoList extends React.Component {
     constructor() {
@@ -20,7 +20,7 @@ class TodoList extends React.Component {
         }
         this.setState(
             {
-                tasks: [...this.state.tasks, newTask],
+                tasks: [newTask, ...this.state.tasks ],
                 searchValue: ""
             })
     }
@@ -58,7 +58,7 @@ class TodoList extends React.Component {
 
         return (
             <>
-                <AddTask createNewTask={this.createNewTask} searchValue={searchValue} setSearchValue={this.setSearchValue} />
+                <NewTask createNewTask={this.createNewTask} searchValue={searchValue} setSearchValue={this.setSearchValue} />
                 {todos}
             </>
         )

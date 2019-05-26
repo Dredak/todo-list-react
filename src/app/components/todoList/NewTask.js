@@ -1,6 +1,6 @@
 import React from "react";
 
-class AddTask extends React.Component {
+class NewTask extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -15,7 +15,7 @@ class AddTask extends React.Component {
 
         return (
             <div className="add-task">
-                <input type="search" value={searchValue} onChange={setSearchValue} placeholder="Add Todo"/>
+                <input type="search" value={searchValue} onChange={setSearchValue} placeholder="Add Task"/>
                 <button onClick={createNewTask}>Add</button>
             </div>
         )
@@ -23,4 +23,4 @@ class AddTask extends React.Component {
 }
 
 
-export default AddTask;
+export default NewTask;

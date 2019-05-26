@@ -50,6 +50,7 @@ header {
   font-weight: 500;
   text-align: right;
   padding: 7px;
+  cursor: pointer;
 }
 
 .add-task {
@@ -78,10 +79,14 @@ input:focus {
   background-color: #fff;
   color: #83d4cb;
   font-weight: 600;
+  cursor: pointer;
 }
 h3 span {
   text-align: right;
 }
 .completed {
   text-decoration: line-through;
+}
+input[type='checkbox']{
+  cursor: pointer
 }
