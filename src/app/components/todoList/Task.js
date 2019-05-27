@@ -14,9 +14,9 @@ class Task extends React.Component {
 
         return (
             <div className="task">
+                <small>{sport || bussines || social}</small> 
                 <input type="checkbox" onChange={() => toggleCompleted(task.id)} />
                 <p className={task.completed ? "content completed" : "content"}>{task.content}</p> 
-                <small>{sport || bussines || social}</small> 
                 <p className="remove" onClick={() => deleteTask(task.id)}>Remove</p>
             </div>
         )
