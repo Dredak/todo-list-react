@@ -8,27 +8,34 @@ class TodoList extends React.Component {
         super();
         this.state = {
             tasks: [],
-            searchValue: ""
+            searchValue: "",
+            category: "social"
         }
     }
 
     createNewTask = () => {
-        const newTask = {
-            id: idGenerator(),
-            content: this.state.searchValue,
-            completed: false
+        if (!!this.state.searchValue === true) {
+            const newTask = {
+                id: idGenerator(),
+                content: this.state.searchValue,
+                completed: false,
+                category: this.state.category
+            };
+            this.setState(
+                {
+                    tasks: [newTask, ...this.state.tasks],
+                    searchValue: ""
+                });
         }
-        this.setState(
-            {
-                tasks: [newTask, ...this.state.tasks ],
-                searchValue: ""
-            })
     }
 
     setSearchValue = (e) => {
-        this.setState({ searchValue: e.target.value })
+        this.setState({ searchValue: e.target.value });
     }
 
+    setCategory = (e)=>{
+        this.setState({category: e.target.value});
+    }
     deleteTask = (id) => {
         const tasks = this.state.tasks.filter((task) => {
             return task.id !== id
@@ -44,7 +51,7 @@ class TodoList extends React.Component {
                 }
                 return task;
             })
-        })
+        });
     }
 
 
@@ -58,7 +65,7 @@ class TodoList extends React.Component {
 
         return (
             <>
-                <NewTask createNewTask={this.createNewTask} searchValue={searchValue} setSearchValue={this.setSearchValue} />
+                <NewTask createNewTask={this.createNewTask} searchValue={searchValue} setSearchValue={this.setSearchValue} setCategory={this.setCategory} />
                 {todos}
             </>
         )

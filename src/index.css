@@ -52,6 +52,10 @@ header {
   padding: 7px;
   cursor: pointer;
 }
+.remove:hover {
+  background-color: #f09290;
+  color: #fff;
+}
 
 .add-task {
   background-color: #fff;
@@ -80,6 +84,26 @@ input:focus {
   color: #83d4cb;
   font-weight: 600;
   cursor: pointer;
+  outline: none;
+}
+.add-task button:hover {
+  background-color: #83d4cb;
+  color: #fff;
+}
+.category {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+.category-item {
+  margin-left: 5px;
+  cursor: pointer;
+}
+input[type="radio"]{
+  cursor: pointer;
+}
+.category input {
+  margin-left: 5px;
 }
 h3 span {
   text-align: right;
