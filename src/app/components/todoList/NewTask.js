@@ -1,17 +1,8 @@
 import React from "react";
 
-class NewTask extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
+const NewTask = (props) => {
 
-        }
-    }
-
-
-
-    render() {
-        const { createNewTask, searchValue, setSearchValue, setCategory } = this.props;
+        const { createNewTask, searchValue, setSearchValue, setCategory } = props;
 
         return (
             <>
@@ -30,7 +21,6 @@ class NewTask extends React.Component {
                 </div>
             </>
         )
-    }
 }
 
 

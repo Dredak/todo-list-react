@@ -14,7 +14,7 @@ class TodoList extends React.Component {
     }
 
     createNewTask = () => {
-        if (!!this.state.searchValue === true) {
+        if (this.state.searchValue) {
             const newTask = {
                 id: idGenerator(),
                 content: this.state.searchValue,
